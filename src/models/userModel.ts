@@ -5,6 +5,7 @@ interface UserDocument extends mongoose.Document {
   name: string;
   email: string;
   password: string;
+  phone: string;
   role: "admin" | "user" | "stuff";
   address?: string;
   latitude?: number;
@@ -14,11 +15,12 @@ interface UserDocument extends mongoose.Document {
 
 const UserSchema = new mongoose.Schema<UserDocument>(
   {
-    name: { type: String, min: 4, max: 20, required: true },
+    name: { type: String, min: 4, max: 20 },
     email: { type: String, max: 20 },
     password: { type: String, min: 8, max: 20, required: true },
     role: { type: String, enum: ["admin", "user", "stuff"], default: "user" },
     address: { type: String, max: 30 },
+    phone: { type: String, max: 14, required: true },
     latitude: { type: Number },
     longitude: { type: Number },
   },
