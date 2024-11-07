@@ -5,5 +5,6 @@ const router: Router = Router();
 
 router.post("/user", createUser);
 router.post("/login", loginUser);
+router.get("/logout", loginUser);
 
 export default router;

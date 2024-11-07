@@ -8,10 +8,11 @@ export const createCategory: any = async (
 ) => {
   try {
     const { name } = req.body;
-    const category = await Category.findOne({ name: name });
+    let category = await Category.findOne({ name: name });
     if (category) {
       return res.status(201).json({ message: "Already exist" });
     }
+    category = await Category.create(req.body);
     return res.status(200).json(category);
   } catch (error) {
     return res

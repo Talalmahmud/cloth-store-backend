@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import Product from "../models/productModel";
 
-export const createProducty: any = async (
+export const createProduct: any = async (
   req: Request,
   res: Response,
   next: NextFunction

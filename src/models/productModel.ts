@@ -10,6 +10,9 @@ interface ProductDocument extends mongoose.Document {
   sellQuantity: number;
   images: string[];
   tags: string;
+  insideDhaka: number;
+  outsideDhaka: number;
+  notes: string;
 }
 
 const ProductSchema = new mongoose.Schema<ProductDocument>(
@@ -22,11 +25,14 @@ const ProductSchema = new mongoose.Schema<ProductDocument>(
       required: true,
     },
     price: { type: Number, default: 0 },
+    insideDhaka: { type: Number, default: 0 },
+    outsideDhaka: { type: Number, default: 0 },
     discount: { type: Number, default: 0 },
     stock: { type: Number, default: 0 },
     sellQuantity: { type: Number, default: 0 },
     images: [String],
     tags: { type: String, min: 4, max: 50 },
+    notes: { type: String, min: 4, max: 50 },
   },
   {
     timestamps: true,
