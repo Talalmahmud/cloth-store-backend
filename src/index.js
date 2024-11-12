@@ -19,7 +19,7 @@ app.use("/api/v1", productRoute);
 app.use("/api/v1", orderRoute);
 
 app.use((req, res) => {
-  return res.status(404).json({ message: "Not found", err });
+  return res.status(404).json({ message: "Not found" });
 });
 app.use((req, res, err) => {
   return res.status(500).json({ message: "Internal Server Error", err });
